@@ -23,4 +23,6 @@ jobs:
           args:
             -Dsonar.projectKey=Victoriiia_simple_math_lib
             -Dsonar.organization=victoriiia
+            -Dsonar.host.url=https://sonarcloud.io
+            -X
           projectBaseDir: .
