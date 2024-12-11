@@ -1,31 +1,33 @@
 #pragma once
 
+#include <vector>
+#include <exception>
 #include <stdexcept>
 #include <vector>
 
 namespace MathLib
-{	
+{
     // Function for addition
     template <typename T>
     T add(T a, T b)
     {
         return a + b;
     }
-    
+
     // Function for subtraction
     template <typename T>
     T subtract(T a, T b)
     {
         return a - b;
     }
-    
+
     // Function for multiplication
     template <typename T>
     T multiply(T a, T b)
     {
         return a * b;
     }
-    
+
     // Function for division
     template <typename T>
     T divide(T a, T b)
@@ -36,11 +38,20 @@ namespace MathLib
         }
         return a / b;
     }
-    
-    // Function for comparing two floating point values
-	bool isEqual(double a, double b, double tolerance = 0.000000001);
 
-    // Square root function
+    // Function for median
+    double median(const std::vector<double>& arr);
+
+    // Function to check equality with tolerance
+    bool isEqual(double a, double b, double tolerance = 1.e-8f);
+
+    // Function for greatest common divisor (GCD)
+    int GCD(int a, int b);
+
+    // Function for least common multiple (LCM)
+    int leastCommonMultiple(int a, int b);
+
+    // Function for square root
     template <typename T>
     double sqrt(T a)
     {
@@ -61,9 +72,7 @@ namespace MathLib
         }
         return result;
     }
- 
-    // Function to check whether value is prime
-    bool isPrime(int n);
+
 
     // Function to search least common multiple
 	int leastCommonMultiple(int a, int b);
@@ -75,4 +84,8 @@ namespace MathLib
 
 
     double calculateAverage(const std::vector<double>& numbers);
+
+    // Function to check if a number is prime
+    bool isPrime(int n);
+
 }
