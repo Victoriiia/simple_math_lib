@@ -42,13 +42,15 @@ namespace MathLib
 		if (b == 0) return a;
 		return GCD(b, a % b);
 	}
+
+    // Function to calculate the third angle of a triangle
+    double calculateThirdAngle(double angle1, double angle2)
+    {
+        if (angle1 <= 0 || angle2 <= 0 || angle1 + angle2 >= 180)
+        {
+            throw std::invalid_argument("Angles must be positive, and their sum must be less than 180.");
+        }
+        return 180.0 - (angle1 + angle2);
+    }
 }
 
-// Реалізація функції для обчислення третього кута
-double calculateThirdAngle(double angle1, double angle2) {
-    // Перевірка, щоб кути були коректними
-    if (angle1 <= 0 || angle2 <= 0 || angle1 + angle2 >= 180) {
-        throw std::invalid_argument("Невірні кути. Сума двох кутів повинна бути меншою за 180.");
-    }
-    return 180 - angle1 - angle2;
-}
