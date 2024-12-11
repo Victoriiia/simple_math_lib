@@ -1,6 +1,7 @@
 #include "math_lib.h"
 #include <cmath>
 #include <algorithm>
+#include <numeric>
 
 namespace MathLib
 {
@@ -42,5 +43,18 @@ namespace MathLib
 		if (b == 0) return a;
 		return GCD(b, a % b);
 	}
+
+
+
+
+    double calculateAverage(const std::vector<double>& numbers) {
+        if (numbers.empty()) {
+            throw std::invalid_argument("Масив чисел не може бути порожнім");
+        }
+
+        
+        double sum = std::accumulate(numbers.begin(), numbers.end(), 0.0);
+        return sum / numbers.size();
+    }
 }
 
