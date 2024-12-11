@@ -43,7 +43,7 @@ namespace MathLib
 		return GCD(b, a % b);
 	}
 
-    // Function to calculate the third angle of a triangle
+    
     double calculateThirdAngle(double angle1, double angle2)
     {
         if (angle1 <= 0 || angle2 <= 0 || angle1 + angle2 >= 180)
