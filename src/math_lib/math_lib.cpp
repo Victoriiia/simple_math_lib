@@ -44,3 +44,11 @@ namespace MathLib
 	}
 }
 
+// Реалізація функції для обчислення третього кута
+double calculateThirdAngle(double angle1, double angle2) {
+    // Перевірка, щоб кути були коректними
+    if (angle1 <= 0 || angle2 <= 0 || angle1 + angle2 >= 180) {
+        throw std::invalid_argument("Невірні кути. Сума двох кутів повинна бути меншою за 180.");
+    }
+    return 180 - angle1 - angle2;
+}

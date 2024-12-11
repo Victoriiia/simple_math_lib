@@ -77,3 +77,17 @@ TEST_F(MathLibTestFixture, GreatestCommonDivider)
 {
     EXPECT_EQ(MathLib::GCD(10, 6), 2);
 }
+
+TEST_F(MathLibTestFixture, GreatestCommonDivider_ValidAngles) {
+    // Тести на коректні кути
+    EXPECT_EQ(MathLib::GCD(30, 60), 90);
+    EXPECT_EQ(MathLib::GCD(45, 45), 90);
+    EXPECT_EQ(MathLib::GCD(60, 90), 30);
+}
+
+TEST_F(MathLibTestFixture, GreatestCommonDivider_InvalidAngles) {
+    // Тест на некоректні кути
+    EXPECT_THROW(MathLib::GCD(90, 90), std::invalid_argument);
+    EXPECT_THROW(MathLib::GCD(180, 1), std::invalid_argument);
+    EXPECT_THROW(MathLib::GCD(0, 90), std::invalid_argument);
+}
